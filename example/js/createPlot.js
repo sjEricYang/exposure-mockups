@@ -1,3 +1,8 @@
+/**
+ * This module will create a "standard" plot:
+ * - simulation data drawn with lines
+ * - "experimental" data drawn with markers only and can have tooltips with the values
+ */
 define([
 	// The dojo/dom module is required by this module, so it goes
 	// in this list of dependencies.
@@ -44,7 +49,7 @@ define([
 	
 	// set up the simulation data source
 	var simulationData = new CSV({
-		url: "../data/line.csv"
+		url: "/example/data/line.csv"
 	});
 	// and the data series for the potential data
 	var potentialSimulationData = new DataSeries(simulationData, {}, {
@@ -54,7 +59,7 @@ define([
 	
 	// set up the experimental data source
 	var experimentalData = new CSV({
-		url: "../data/line-data.csv"
+		url: "/example/data/line-data.csv"
 	});
 	// and the data series for the original experimental data
 	var potentialExperimentalOriginal = new DataSeries(experimentalData, {}, {
@@ -68,7 +73,7 @@ define([
 	});
 	
 	// Create the chart within it's "holding" node
-	var chart = new Chart("chartNode", { 
+	var chart = new Chart("figure1GoesHere", { 
 		title: "Membrane potential",
 		titlePos: "bottom",
 		titleGap: 25,
