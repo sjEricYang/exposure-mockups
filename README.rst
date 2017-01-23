@@ -7,4 +7,4 @@ In this repository we are exploring options for various ways that we might want 
 Python webserver
 ================
 
-Due to the requirements of Javascript and HTML development, it is nescessary to make use of a webserver to serve the HTML and JS files. For convenience, we include a simple wrapper script in the `server`_ folder which makes use of the python 3 builtin http server.
+Due to the requirements of Javascript and HTML development, it is nescessary to make use of a webserver to serve the HTML and JS files. For convenience, we include a simple wrapper script in the `server <server>`_ folder which makes use of the python 3 builtin http server.
