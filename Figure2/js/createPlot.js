@@ -53,8 +53,8 @@ define([
 	});
 	// and the data series for the potential data
 	var potentialSimulationData = new DataSeries(simulationData, {}, {
-		x: "Figure_2A | V (millivolt)",
-		y: "Figure_2A | d_inf (dimensionless)"
+		x: "V (millivolt)",
+		y: "d_inf (dimensionless)"
 	});
 	
 	// set up the experimental data source
