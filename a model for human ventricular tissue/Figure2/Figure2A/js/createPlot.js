@@ -16,6 +16,10 @@ define([
 	// Require the basic 2d chart resource
 	"dojox/charting/Chart",
 	
+	// Loading legend widget class
+	"dojox/charting/widget/Legend"
+
+	
 	// Require the theme of our choosing
 	"dojox/charting/themes/Claro",
 	
@@ -37,7 +41,7 @@ define([
 	
 	// Wait until the DOM is ready
 	"dojo/domReady!"
-], function(dom, CSV, DataSeries, Chart, theme, LinePlot, MarkersPlot, MarkersOnlyPlot, Tooltip) {
+], function(dom, CSV, DataSeries, Chart, theme, LinePlot, MarkersPlot, MarkersOnlyPlot, Tooltip, Legend) {
 	// Once all modules in the dependency list have loaded, this
 	// function is called to define the demo/myModule module.
 	//
@@ -64,6 +68,7 @@ define([
 	// and the data series for the original experimental data
 	var potentialExperimentalOriginal = new DataSeries(experimentalData, {}, {
 		x: "V(mV)_original",
+		y: "Nomralised I_Ca,L_original"
 		y: "Nomralised I_Ca,L_original"
 	});
 	// and the data series for the temperature corrected experimental data used in the paper
@@ -115,10 +120,22 @@ define([
 		text: function(o) {
 			return o.x + "," + o.y;
 		}
+	
+	
+	
 	});
+	
+	// Create the tooltip
+    var tip = new Tooltip(chart,"default");
+
+    // Create the magnifier
+    var mag = new Magnify(chart,"default");
 	
 	// Render the chart!
 	chart.render();
+	
+	// Create the legend
+    var legend = new Legend({ chart: chart }, "legend");
 
 	// This returned object becomes the defined value of this module
 	return {
